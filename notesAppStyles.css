@@ -1,0 +1,48 @@
+.center-login {
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+  }
+
+
+body {
+    background-image: url("https://img2.pngio.com/detective-png-transparent-detective-png-image-free-download-pngkey-detective-notepad-png-300_310.png");
+    
+  }
+
+h1.main-sig {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px #000000, 0 0 10px #000000;
+    
+  }
+
+.m-fadeOut {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+  }
+ 
+  
+.m-fadeIn {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
+  }
+
+ 
+  #top-signature {
+    position: absolute;
+    top: 20%;
+    right: 12%;
+  }
+
+
+  .signature {
+    font-family: cursive
+  }
+
+  #sig {
+    font-size: 100px;
+  }
+
+  

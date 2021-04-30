@@ -1,1 +1,1 @@
-# notes-frontend
+Link to backend repo: https://github.com/AlexJMartinez/notes-backend
