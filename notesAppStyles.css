@@ -30,19 +30,31 @@ h1.main-sig {
   }
 
  
-  #top-signature {
+  #signature {
     position: absolute;
     top: 20%;
     right: 12%;
   }
 
 
-  .signature {
+  .signature-text {
     font-family: cursive
   }
 
   #sig {
     font-size: 100px;
+  }
+
+  img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0px;
+    width: 150px;
+    
+  }
+  
+  img:hover {
+    box-shadow: 0 0 2px 1px rgb(0, 0, 0);
   }
 
   
