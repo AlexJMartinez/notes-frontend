@@ -22,8 +22,8 @@ class User {
               
               img.addEventListener('click', function() {
                 console.log(user)
-
-                ///manipulate DOM here to display associated posts 
+                
+                ///manipulate DOM here to display associated posts
             })
     
               document.getElementById("user-profiles").appendChild(img)
