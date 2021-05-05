@@ -1,48 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
     <head>
+        <script type="text/javascript" src="components/note.js"></script>
+        <script type="text/javascript" src="components/user.js"></script>
         <script type="text/javascript" src="src/index.js"></script>
         <link rel="stylesheet" href="notesAppStyles.css">
         <meta charset="utf-8">
         <title>Welcome to notesApp!</title>
     </head>
-    <div>
+   
+    <body>
 
-        <!-- <h1 align="right">Welcome to notesApp!</h1> -->
-<br>
-<br>
+      <table align="left" style="width:150px;">
+          <tc>
+            <td id="user-profiles"></td>
+                </tc>
+                  </table>
 
-        <form action="" class="center-login" id="login">
-            <div class="container">
-              <h1>Login</h1>
-             
-              <label for="name"><b>Name:</b></label>
-              <input type="text" placeholder="name" name="name" required>
 
-              <div><br>
-                <button type="submit" class="signupbtn" id="toggle-one">Sign Up</button>
-              </div>
-            </div>
-          </form>
-
-    
-          <form action="" class="center-login" id="new-note">
-            <div class="container">
-              <h1>Notes!</h1>
-             
-              <label for="name"><b>Title:</b></label>
-              <input type="text" placeholder="title" name="title" required><br>
-              <label for="name"><b>Content:</b></label><br>
-              <textarea type="text" placeholder="content... " name="content" required></textarea>
-              <div><br>
-                <button type="submit" class="create-note" id="toggle-two">Create Note!</button>
-              </div>
-            </div>
-          </form>
-          
-         <footer id="top-signature" class="signature">
+                  <table align="center" style="width:150px;">
+                    <tc>
+                      <td class="user-notes"></td>
+                          </tc>
+                            </table>
+      
+         <!-- <footer id="signature" class="signature-text">
              <h1 id="sig" class="main-sig">notesApp...</h1>
-            </footer>
+            </footer> -->
 
     </body>
 </html>
