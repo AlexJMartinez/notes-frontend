@@ -1,15 +1,16 @@
 const users_url = "http://localhost:3000/users"
 const notes_url = "http://localhost:3000/notes" 
-const note_url = "http://localhost:3000/notes/${id}" 
+
 
 
      
      document.addEventListener('DOMContentLoaded', () => {
         
                  getUsers()
-                 getNotes()              
+                 getNotes()      
                 
 })  
+
 
 
 function getUsers() {
@@ -30,6 +31,45 @@ function renderUsers(arg) {
         });
 }
 
+
+const form = document.getElementById("new-note")
+
+form.addEventListener('submit', createNote)
+
+function createNote(note) {
+    note.preventDefault()
+
+    titleInput = document.getElementById("titleInput")
+    contentInput = document.getElementById("contentInput")
+    userId = document.getElementsByTagName("img")[0].id
+
+    const noteValues = {
+        title: titleInput.value,
+        content: contentInput.value,
+        user_id: userId
+    }
+                     
+    const configObj = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify(noteValues)
+     }
+
+    fetch(notes_url, configObj)
+       .then(resp => resp.json())
+       .then(json => {
+           const i = new Note({id: json.data.id, ...json.data.attributes})
+
+           renderNotes();
+
+       })
+    }
+                
+
+
 function getNotes() {
     fetch(notes_url)
       .then(response => response.json())
@@ -39,11 +79,11 @@ function getNotes() {
 
 function renderNotes(arg) {
     const notes = arg["data"]
-  
+            debugger
         notes.forEach(element => {
            
             const n = new Note({id: element.id, ...element.attributes})
-            // debugger
+       
             n.attachNotesToDom()
            
         });
@@ -53,6 +93,7 @@ function renderNotes(arg) {
 
 function deleteNote(e) {
     e.target.parentElement.remove()
+ 
     const id = e.target.id 
 
     const configObj = {
@@ -63,9 +104,9 @@ function deleteNote(e) {
         }
     }
 
-    fetch(note_url, configObj)
+    fetch(`http://localhost:3000/notes/${id}`, configObj)
         .then(resp => resp.json())
-        .then(json => alert(json.message))
+        .then(alert("note erased!"))
       
 }
 

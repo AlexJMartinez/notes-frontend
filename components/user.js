@@ -7,11 +7,11 @@ class User {
       this.id = id;
       this.name = name;
       this.img_url = img_url;
-
+      
       this.element = document.createElement("img")
 
       this.element.addEventListener('click', this.handleImgClick)
-      
+     
    
       User.all.push(this)
     }

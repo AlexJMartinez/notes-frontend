@@ -1,6 +1,6 @@
 body {
-    background-image: url("https://img2.pngio.com/detective-png-transparent-detective-png-image-free-download-pngkey-detective-notepad-png-300_310.png");
-    
+    background-image: url(https://lh3.googleusercontent.com/proxy/fMZ7FZeM4GiHhx0ynz00cmjdYiviAwpV2dHlqTVLIMfPU3e_YqPbDxelCDDNRZgbFYVDN_K14BJ7kQC1sIn3aILDEEcKAlwaJDyyKA);
+   
   }
 
 h1.main-sig {
@@ -8,22 +8,11 @@ h1.main-sig {
     text-shadow: 0 0 3px #000000, 0 0 10px #000000;
   }
 
-.m-fadeOut {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s linear 300ms, opacity 300ms;
-  }
- 
-.m-fadeIn {
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0s linear 0s, opacity 300ms;
-  }
- 
+
 #signature {
     position: absolute;
     top: 50%;
-    right: 50%;
+    right: 20%;
   }
 
 .signature-text {
@@ -33,6 +22,11 @@ h1.main-sig {
 #sig {
     font-size: 150px;
   }
+
+#form-header {
+    font-size: 50px;
+  }
+
 
 
 img {
@@ -65,7 +59,7 @@ form {
   left: 1%;
 }
 
-label {
+#form-header {
   color: rgb(255, 255, 255);
   text-shadow: 0 0 3px #000000, 0 0 10px #000000;
 }

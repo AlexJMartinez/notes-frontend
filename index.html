@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        
-        <script type="text/javascript" src="src/index.js"></script>
         <link rel="stylesheet" href="notesAppStyles.css">
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Welcome to notesApp!</title>
     </head>
    
@@ -16,7 +15,7 @@
                 </tc>
                   </table>
 
-                  <table align="right" style="width:350px;">
+                  <table align="right" style="width:750px;">
                     <tc>
                       <td><div id="user-notes"></div></td>
                           </tc>
@@ -24,11 +23,14 @@
 
     
       <form id="new-note">
+        <label id="form-header" class="signature-text">new note</label>
+        <br>
+        <br>
         <label for="note-title">Title:</label>
-        <input type="text" name="title">
+        <input id="titleInput" type="text" name="title" placeholder="title...">
         <br><br>
         <label for="note-content">Content:</label>
-        <input type="text" maxlength="50" size="50">
+        <input id="contentInput" type="text" maxlength="50" size="50" placeholder="content...">
         <br><br>
         <input type="submit" value="Create Note!">
       </form> 
@@ -42,7 +44,8 @@
             </footer>
 
             <script type="text/javascript" src="components/note.js"></script>
-        <script type="text/javascript" src="components/user.js"></script>
+          <script type="text/javascript" src="components/user.js"></script>
+        <script type="text/javascript" src="src/index.js"></script>
         
             <!-- If your script tag is in the head, the JavaScript is loaded before your HTML 
                  so these needed to be moved into the body -->
