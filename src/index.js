@@ -2,7 +2,7 @@ const users_url = "http://localhost:3000/users"
 const notes_url = "http://localhost:3000/notes" 
 const note_url = "http://localhost:3000/notes/${id}" 
 
-const note = document.getElementById("user-notes")
+
      
      document.addEventListener('DOMContentLoaded', () => {
         
@@ -22,7 +22,9 @@ function getUsers() {
 function renderUsers(arg) {
     const users = arg["data"]
         users.forEach(element => {
-        new User({id: element.id, ...element.attributes})
+        const u = new User({id: element.id, ...element.attributes})
+          
+        u.attachUsersToDom()
               
            
         });
@@ -42,14 +44,14 @@ function renderNotes(arg) {
            
             const n = new Note({id: element.id, ...element.attributes})
             // debugger
-            n.attachToDom()
+            n.attachNotesToDom()
            
         });
 
 }
 
 
-function deleteItem(e) {
+function deleteNote(e) {
     e.target.parentElement.remove()
     const id = e.target.id 
 

@@ -22,7 +22,7 @@ class Note {
 
     handleDivClick = (e) => {
         if (e.target.innerText === "Delete") {
-            deleteItem(e)
+            deleteNote(e)
         }
     }
 
@@ -34,7 +34,7 @@ class Note {
         return this.element
     }
 
-    attachToDom() {      
+    attachNotesToDom() {      
         Note.container.appendChild(this.render())        
     }
 
