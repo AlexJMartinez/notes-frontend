@@ -1,24 +1,81 @@
+const users_url = "http://localhost:3000/users"
+const notes_url = "http://localhost:3000/notes" 
+const note_url = "http://localhost:3000/notes/${id}" 
+
+const note = document.getElementById("user-notes")
      
+     document.addEventListener('DOMContentLoaded', () => {
+        
+                 getUsers()
+                 getNotes()              
+                
+})  
 
-document.addEventListener('DOMContentLoaded', () => {
-              const user = new User;
-              user.getUsers()
-              const note = new Note;
-              note.getNotes()
 
+function getUsers() {
+    fetch(users_url)
+      .then(response => response.json())
+      .then(renderUsers)               
+    };
+        
+
+function renderUsers(arg) {
+    const users = arg["data"]
+        users.forEach(element => {
+        new User({id: element.id, ...element.attributes})
               
-                         
-})
+           
+        });
+}
+
+function getNotes() {
+    fetch(notes_url)
+      .then(response => response.json())
+      .then(renderNotes)               
+    };
+        
+
+function renderNotes(arg) {
+    const notes = arg["data"]
+  
+        notes.forEach(element => {
+           
+            const n = new Note({id: element.id, ...element.attributes})
+            // debugger
+            n.attachToDom()
+           
+        });
+
+}
+
+
+function deleteItem(e) {
+    e.target.parentElement.remove()
+    const id = e.target.id 
+
+    const configObj = {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        }
+    }
+
+    fetch(note_url, configObj)
+        .then(resp => resp.json())
+        .then(json => alert(json.message))
+      
+}
 
 
 
 
 
 
-// For 'getNotes' maybe when you click on a users avatar the event listener should empty the
-// table data and refill it with all associated notes for that user.
 
-// Make fetch request to users/:id 
+
+
+
 
 
 
