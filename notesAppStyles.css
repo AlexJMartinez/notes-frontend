@@ -1,7 +1,7 @@
-body {
+/* body {
     background-image: url(https://lh3.googleusercontent.com/proxy/fMZ7FZeM4GiHhx0ynz00cmjdYiviAwpV2dHlqTVLIMfPU3e_YqPbDxelCDDNRZgbFYVDN_K14BJ7kQC1sIn3aILDEEcKAlwaJDyyKA);
    
-  }
+  } */
 
 h1.main-sig {
     color: rgb(255, 255, 255);
@@ -24,7 +24,7 @@ h1.main-sig {
   }
 
 #form-header {
-    font-size: 50px;
+    font-size: 30px;
   }
 
 
@@ -59,7 +59,7 @@ form {
   left: 1%;
 }
 
-#form-header {
+/* #form-header {
   color: rgb(255, 255, 255);
   text-shadow: 0 0 3px #000000, 0 0 10px #000000;
-}
+} */

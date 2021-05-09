@@ -22,6 +22,7 @@ function getUsers() {
 
 function renderUsers(arg) {
     const users = arg["data"]
+    
         users.forEach(element => {
         const u = new User({id: element.id, ...element.attributes})
           
@@ -37,8 +38,9 @@ const form = document.getElementById("new-note")
 form.addEventListener('submit', createNote)
 
 function createNote(note) {
+    debugger
     note.preventDefault()
-
+   
     titleInput = document.getElementById("titleInput")
     contentInput = document.getElementById("contentInput")
     userId = document.getElementsByTagName("img")[0].id
@@ -46,7 +48,7 @@ function createNote(note) {
     const noteValues = {
         title: titleInput.value,
         content: contentInput.value,
-        user_id: userId
+        user_id: userId.value
     }
                      
     const configObj = {
@@ -61,9 +63,11 @@ function createNote(note) {
     fetch(notes_url, configObj)
        .then(resp => resp.json())
        .then(json => {
-           const i = new Note({id: json.data.id, ...json.data.attributes})
-
-           renderNotes();
+           
+           const newNote = new Note({id: json.data.id, ...json.data.attributes})
+         
+           newNote.attachNotesToDom()
+           
 
        })
     }
@@ -79,9 +83,9 @@ function getNotes() {
 
 function renderNotes(arg) {
     const notes = arg["data"]
-            debugger
+    
         notes.forEach(element => {
-           
+            
             const n = new Note({id: element.id, ...element.attributes})
        
             n.attachNotesToDom()
