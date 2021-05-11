@@ -37,9 +37,9 @@ const form = document.getElementById("new-note")
 
 form.addEventListener('submit', createNote)
 
-function createNote(note) {
-    debugger
-    note.preventDefault()
+function createNote(e) {
+ 
+    e.preventDefault()
    
     titleInput = document.getElementById("titleInput")
     contentInput = document.getElementById("contentInput")
@@ -48,7 +48,7 @@ function createNote(note) {
     const noteValues = {
         title: titleInput.value,
         content: contentInput.value,
-        user_id: userId.value
+        user_id: userId
     }
                      
     const configObj = {
@@ -67,7 +67,9 @@ function createNote(note) {
            const newNote = new Note({id: json.data.id, ...json.data.attributes})
          
            newNote.attachNotesToDom()
-           
+
+           titleInput.value = ''
+           contentInput.value = ''
 
        })
     }
