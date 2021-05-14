@@ -4,7 +4,7 @@ const notes_url = "http://localhost:3000/notes"
 
 
      
-     document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
         
                  getUsers()
                  getNotes()      
@@ -81,7 +81,10 @@ function getNotes() {
       .then(response => response.json())
       .then(renderNotes)               
     };
-        
+// getNotes and renderNotes have to do with page load rendering the
+// collection of notes already in the db to the page for the particular user
+// this is different than whats happening in my createNote function which is 
+// creating a note and attaching it to the DOM.        
 
 function renderNotes(arg) {
     const notes = arg["data"]

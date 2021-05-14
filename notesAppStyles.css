@@ -1,7 +1,6 @@
-/* body {
-    background-image: ;
-   
-  } */
+body {
+    background-image: url("img/4f3239ef0448fa95cf1719a3925f1376.jpg");  
+  }
 
 h1.main-sig {
     color: rgb(255, 255, 255);
@@ -59,7 +58,4 @@ form {
   left: 1%;
 }
 
-/* #form-header {
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 3px #000000, 0 0 10px #000000;
-} */
+
