@@ -1,9 +1,6 @@
 const users_url = "http://localhost:3000/users"
 const notes_url = "http://localhost:3000/notes" 
 
-
-
-     
 document.addEventListener('DOMContentLoaded', () => {
         
                  getUsers()
@@ -11,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
 })  
 
-
+//async
 
 function getUsers() {
     fetch(users_url)
@@ -34,6 +31,8 @@ function renderUsers(arg) {
 
 
 const form = document.getElementById("new-note")
+
+//async
 
 form.addEventListener('submit', createNote)
 
@@ -74,7 +73,7 @@ function createNote(e) {
        })
     }
                 
-
+//async
 
 function getNotes() {
     fetch(notes_url)
@@ -82,9 +81,9 @@ function getNotes() {
       .then(renderNotes)               
     };
 // getNotes and renderNotes have to do with page load rendering the
-// collection of notes already in the db to the page for the particular user
+// collection of notes already in the db to the page for the particular user,
 // this is different than whats happening in my createNote function which is 
-// creating a note and attaching it to the DOM.        
+// creating a note and attaching it to the DOM asynchronously.        
 
 function renderNotes(arg) {
     const notes = arg["data"]
@@ -99,6 +98,7 @@ function renderNotes(arg) {
 
 }
 
+//async 
 
 function deleteNote(e) {
     e.target.parentElement.remove()
@@ -114,7 +114,6 @@ function deleteNote(e) {
     }
 
     fetch(`http://localhost:3000/notes/${id}`, configObj)
-        .then(resp => resp.json())
         .then(alert("note erased!"))
       
 }

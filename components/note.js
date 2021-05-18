@@ -17,7 +17,7 @@ class Note {
         this.element.addEventListener('click', this.handleDivClick)
     
         Note.all.push(this)
-
+        
     }
 
     handleDivClick = (e) => {
